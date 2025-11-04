@@ -1,0 +1,70 @@
+name: Release new version
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+  actions: read
+  id-token: write
+
+jobs:
+  build:
+    name: Build Icon Packs
+    runs-on: self-hosted
+
+    container:
+      image: python:3.12-slim
+      options: --user root
+
+    steps:
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y curl zip
+          rm -rf /var/lib/apt/lists/*
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install uv tool
+        run: |
+          uv pip install --system -e .
+
+      - name: Run renderer
+        run: |
+          python -m render
+
+      - name: Upload Stream Deck artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: icon-packs
+          path: build/*
+
+  release:
+    name: Release Icon Packs
+    needs: build
+    runs-on: self-hosted
+
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: icon-packs
+          path: icon-packs
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Font Awesome Icon Packs ${{ github.ref_name }}
+          files: icon-packs/*
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

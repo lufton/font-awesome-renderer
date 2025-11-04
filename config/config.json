@@ -1,0 +1,197 @@
+{
+  "version": "v7.1.0",
+  "fonts": [
+    {
+      "name": "Brands",
+      "stylesheet": "brands.css"
+    },
+    {
+      "name": "Chisel Regular",
+      "stylesheet": "chisel-regular.css"
+    },
+    {
+      "name": "Classic Solid",
+      "stylesheet": "solid.css"
+    },
+    {
+      "name": "Classic Regular",
+      "stylesheet": "regular.css"
+    },
+    {
+      "name": "Classic Light",
+      "stylesheet": "light.css"
+    },
+    {
+      "name": "Classic Thin",
+      "stylesheet": "thin.css"
+    },
+    {
+      "name": "Duotone Solid",
+      "stylesheet": "duotone.css"
+    },
+    {
+      "name": "Duotone Regular",
+      "stylesheet": "duotone-regular.css"
+    },
+    {
+      "name": "Duotone Light",
+      "stylesheet": "duotone-light.css"
+    },
+    {
+      "name": "Duotone Thin",
+      "stylesheet": "duotone-thin.css"
+    },
+    {
+      "name": "Etch Solid",
+      "stylesheet": "etch-solid.css"
+    },
+    {
+      "name": "Jelly Regular",
+      "stylesheet": "jelly-regular.css"
+    },
+    {
+      "name": "Jelly Duo Regular",
+      "stylesheet": "jelly-duo-regular.css"
+    },
+    {
+      "name": "Jelly Fill Regular",
+      "stylesheet": "jelly-fill-regular.css"
+    },
+    {
+      "name": "Notdog Solid",
+      "stylesheet": "notdog-solid.css"
+    },
+    {
+      "name": "Notdog Duo Solid",
+      "stylesheet": "notdog-duo-solid.css"
+    },
+    {
+      "name": "Sharp Solid",
+      "stylesheet": "sharp-solid.css"
+    },
+    {
+      "name": "Sharp Regular",
+      "stylesheet": "sharp-regular.css"
+    },
+    {
+      "name": "Sharp Light",
+      "stylesheet": "sharp-light.css"
+    },
+    {
+      "name": "Sharp Thin",
+      "stylesheet": "sharp-thin.css"
+    },
+    {
+      "name": "Sharp Duotone Solid",
+      "stylesheet": "sharp-duotone-solid.css"
+    },
+    {
+      "name": "Sharp Duotone Regular",
+      "stylesheet": "sharp-duotone-regular.css"
+    },
+    {
+      "name": "Sharp Duotone Light",
+      "stylesheet": "sharp-duotone-light.css"
+    },
+    {
+      "name": "Sharp Duotone Thin",
+      "stylesheet": "sharp-duotone-thin.css"
+    },
+    {
+      "name": "Slab Regular",
+      "stylesheet": "slab-regular.css"
+    },
+    {
+      "name": "Slab Press Regular",
+      "stylesheet": "slab-press-regular.css"
+    },
+    {
+      "name": "Thumbprint Light",
+      "stylesheet": "thumbprint-light.css"
+    },
+    {
+      "name": "Utility Semibold",
+      "stylesheet": "utility-semibold.css"
+    },
+    {
+      "name": "Utility Duo Semibold",
+      "stylesheet": "utility-duo-semibold.css"
+    },
+    {
+      "name": "Utility Fill Semibold",
+      "stylesheet": "utility-fill-semibold.css"
+    },
+    {
+      "name": "Whiteboard Semibold",
+      "stylesheet": "whiteboard-semibold.css"
+    }
+  ],
+  "variants": [
+    {
+      "name": "White (Transparent)",
+      "primary_color": "#ffffff",
+      "secondary_color": "#e0e0e0"
+    },
+    {
+      "name": "White",
+      "primary_color": "#ffffff",
+      "secondary_color": "#e0e0e0",
+      "canvas_color": "#2c2c2c"
+    },
+    {
+      "name": "Deep Blue (Transparent)",
+      "primary_color": "#3a7bd5",
+      "secondary_color": "#6fa9ef"
+    },
+    {
+      "name": "Deep Blue",
+      "primary_color": "#3a7bd5",
+      "secondary_color": "#6fa9ef",
+      "canvas_color": "#0d2746"
+    },
+    {
+      "name": "Emerald Green (Transparent)",
+      "primary_color": "#2ecc71",
+      "secondary_color": "#58d68d"
+    },
+    {
+      "name": "Emerald Green",
+      "primary_color": "#2ecc71",
+      "secondary_color": "#58d68d",
+      "canvas_color": "#0f2e1a"
+    },
+    {
+      "name": "Warm Amber (Transparent)",
+      "primary_color": "#e6a23c",
+      "secondary_color": "#f2c066"
+    },
+    {
+      "name": "Warm Amber",
+      "primary_color": "#e6a23c",
+      "secondary_color": "#f2c066",
+      "canvas_color": "#3a2500"
+    },
+    {
+      "name": "Crimson Red (Transparent)",
+      "primary_color": "#e74c3c",
+      "secondary_color": "#f5735e"
+    },
+    {
+      "name": "Crimson Red",
+      "primary_color": "#e74c3c",
+      "secondary_color": "#f5735e",
+      "canvas_color": "#3a0a05"
+    },
+    {
+      "name": "Royal Purple (Transparent)",
+      "primary_color": "#9b59b6",
+      "secondary_color": "#bb84d1"
+    },
+    {
+      "name": "Royal Purple",
+      "primary_color": "#9b59b6",
+      "secondary_color": "#bb84d1",
+      "canvas_color": "#241032"
+    }
+  ]
+}
