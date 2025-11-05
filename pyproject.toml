@@ -1,6 +1,6 @@
 [project]
 name = "stream-duck-font-awesome-icon-packs"
-version = "0.0.1"
+version = "7.1.0"
 description = "Stream Duck Font Awesome Icon Packs"
 dependencies = [
     "brotli",

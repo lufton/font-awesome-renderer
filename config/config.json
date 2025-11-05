@@ -1,6 +1,122 @@
 {
   "version": "v7.1.0",
   "fonts": {
+    "brands": {
+      "name": "Brands",
+      "stylesheet": "brands.css"
+    },
+    "chisel-regular": {
+      "name": "Chisel Regular",
+      "stylesheet": "chisel-regular.css"
+    },
+    "classic-solid": {
+      "name": "Classic Solid",
+      "stylesheet": "solid.css"
+    },
+    "classic-regular": {
+      "name": "Classic Regular",
+      "stylesheet": "regular.css"
+    },
+    "classic-light": {
+      "name": "Classic Light",
+      "stylesheet": "light.css"
+    },
+    "classic-thin": {
+      "name": "Classic Thin",
+      "stylesheet": "thin.css"
+    },
+    "duotone-solid": {
+      "name": "Duotone Solid",
+      "stylesheet": "duotone.css"
+    },
+    "duotone-regular": {
+      "name": "Duotone Regular",
+      "stylesheet": "duotone-regular.css"
+    },
+    "duotone-light": {
+      "name": "Duotone Light",
+      "stylesheet": "duotone-light.css"
+    },
+    "duotone-thin": {
+      "name": "Duotone Thin",
+      "stylesheet": "duotone-thin.css"
+    },
+    "etch-solid": {
+      "name": "Etch Solid",
+      "stylesheet": "etch-solid.css"
+    },
+    "jelly-regular": {
+      "name": "Jelly Regular",
+      "stylesheet": "jelly-regular.css"
+    },
+    "jelly-duo-regular": {
+      "name": "Jelly Duo Regular",
+      "stylesheet": "jelly-duo-regular.css"
+    },
+    "jelly-fill-regular": {
+      "name": "Jelly Fill Regular",
+      "stylesheet": "jelly-fill-regular.css"
+    },
+    "notdog-solid": {
+      "name": "Notdog Solid",
+      "stylesheet": "notdog-solid.css"
+    },
+    "notdog-duo-solid": {
+      "name": "Notdog Duo Solid",
+      "stylesheet": "notdog-duo-solid.css"
+    },
+    "sharp-solid": {
+      "name": "Sharp Solid",
+      "stylesheet": "sharp-solid.css"
+    },
+    "sharp-regular": {
+      "name": "Sharp Regular",
+      "stylesheet": "sharp-regular.css"
+    },
+    "sharp-light": {
+      "name": "Sharp Light",
+      "stylesheet": "sharp-light.css"
+    },
+    "sharp-thin": {
+      "name": "Sharp Thin",
+      "stylesheet": "sharp-thin.css"
+    },
+    "sharp-duotone-solid": {
+      "name": "Sharp Duotone Solid",
+      "stylesheet": "sharp-duotone-solid.css"
+    },
+    "sharp-duotone-regular": {
+      "name": "Sharp Duotone Regular",
+      "stylesheet": "sharp-duotone-regular.css"
+    },
+    "sharp-duotone-light": {
+      "name": "Sharp Duotone Light",
+      "stylesheet": "sharp-duotone-light.css"
+    },
+    "sharp-duotone-thin": {
+      "name": "Sharp Duotone Thin",
+      "stylesheet": "sharp-duotone-thin.css"
+    },
+    "slab-regular": {
+      "name": "Slab Regular",
+      "stylesheet": "slab-regular.css"
+    },
+    "slab-press-regular": {
+      "name": "Slab Press Regular",
+      "stylesheet": "slab-press-regular.css"
+    },
+    "thumbprint-light": {
+      "name": "Thumbprint Light",
+      "stylesheet": "thumbprint-light.css"
+    },
+    "utility-semibold": {
+      "name": "Utility Semibold",
+      "stylesheet": "utility-semibold.css"
+    },
+    "utility-duo-semibold": {
+      "name": "Utility Duo Semibold",
+      "stylesheet": "utility-duo-semibold.css"
+    },
     "utility-fill-semibold": {
       "name": "Utility Fill Semibold",
       "stylesheet": "utility-fill-semibold.css"
