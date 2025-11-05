@@ -172,12 +172,6 @@ def render_icon(
     if secondary_glyph:
         glyph.paste(secondary_glyph, (0, 0), secondary_glyph)
 
-    # icon = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
-    # mask = Image.new("L", canvas_size, 0)
-    # draw = ImageDraw.Draw(mask)
-    # draw.rounded_rectangle([(0, 0), (canvas_size[0] - 1, canvas_size[1] - 1)], radius=canvas_radius, fill=255)
-    # background = Image.new("RGBA", canvas_size, canvas_color)
-    # icon.paste(background, (0, 0), mask)
     icon = Image.new("RGBA", canvas_size, canvas_color)
     icon.paste(glyph, ((canvas_size[0] - width) // 2, (canvas_size[1] - height) // 2), glyph)
 
