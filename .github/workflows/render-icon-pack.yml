@@ -45,6 +45,7 @@ jobs:
           git config --global --add safe.directory $PWD
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch --prune origin "+refs/tags/*:refs/tags/*"
           new_tag="${{ inputs.base_tag }}-${{ inputs.icon_pack_name }}"
           git tag -a "$new_tag" -m "Release $new_tag"
           git push origin "$new_tag"
