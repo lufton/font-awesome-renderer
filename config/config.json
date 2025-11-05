@@ -1,0 +1,81 @@
+{
+  "version": "v7.1.0",
+  "fonts": {
+    "utility-fill-semibold": {
+      "name": "Utility Fill Semibold",
+      "stylesheet": "utility-fill-semibold.css"
+    },
+    "whiteboard-semibold": {
+      "name": "Whiteboard Semibold",
+      "stylesheet": "whiteboard-semibold.css"
+    }
+  },
+  "variants": {
+    "white-transparent": {
+      "name": "White (Transparent)",
+      "primary_color": "#ffffff",
+      "secondary_color": "#e0e0e0"
+    },
+    "white": {
+      "name": "White",
+      "primary_color": "#ffffff",
+      "secondary_color": "#e0e0e0",
+      "canvas_color": "#2c2c2c"
+    },
+    "deep-blue-transparent": {
+      "name": "Deep Blue (Transparent)",
+      "primary_color": "#3a7bd5",
+      "secondary_color": "#6fa9ef"
+    },
+    "deep-blue": {
+      "name": "Deep Blue",
+      "primary_color": "#3a7bd5",
+      "secondary_color": "#6fa9ef",
+      "canvas_color": "#0d2746"
+    },
+    "emerald-green-transparent": {
+      "name": "Emerald Green (Transparent)",
+      "primary_color": "#2ecc71",
+      "secondary_color": "#58d68d"
+    },
+    "emerald-green": {
+      "name": "Emerald Green",
+      "primary_color": "#2ecc71",
+      "secondary_color": "#58d68d",
+      "canvas_color": "#0f2e1a"
+    },
+    "warm-amber-transparent": {
+      "name": "Warm Amber (Transparent)",
+      "primary_color": "#e6a23c",
+      "secondary_color": "#f2c066"
+    },
+    "warm-amber": {
+      "name": "Warm Amber",
+      "primary_color": "#e6a23c",
+      "secondary_color": "#f2c066",
+      "canvas_color": "#3a2500"
+    },
+    "crimson-red-transparent": {
+      "name": "Crimson Red (Transparent)",
+      "primary_color": "#e74c3c",
+      "secondary_color": "#f5735e"
+    },
+    "crimson-red": {
+      "name": "Crimson Red",
+      "primary_color": "#e74c3c",
+      "secondary_color": "#f5735e",
+      "canvas_color": "#3a0a05"
+    },
+    "royal-purple-transparent": {
+      "name": "Royal Purple (Transparent)",
+      "primary_color": "#9b59b6",
+      "secondary_color": "#bb84d1"
+    },
+    "royal-purple": {
+      "name": "Royal Purple",
+      "primary_color": "#9b59b6",
+      "secondary_color": "#bb84d1",
+      "canvas_color": "#241032"
+    }
+  }
+}

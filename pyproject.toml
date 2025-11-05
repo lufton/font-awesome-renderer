@@ -1,0 +1,17 @@
+[project]
+name = "stream-duck-font-awesome-icon-packs"
+version = "0.0.1"
+description = "Stream Duck Font Awesome Icon Packs"
+dependencies = [
+    "brotli",
+    "fonttools",
+    "freetype-py",
+    "pillow",
+    "requests",
+    "tinycss2",
+    "tqdm",
+    "uharfbuzz",
+]
+
+[project.scripts]
+render = "src.render:cli"
