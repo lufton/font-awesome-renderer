@@ -1,6 +1,5 @@
 /.idea/
 /assets/
+/build/
 /output/
-/icons.json
 /uv.lock
-/*.bat

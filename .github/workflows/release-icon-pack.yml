@@ -63,22 +63,22 @@ jobs:
             <table>
               <tr>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.white-transparent.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.white-transparent.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.white-transparent.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.white-transparent.SDICON">Stream Dock</a>
                 </td>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.white.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.white.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.white.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.white.SDICON">Stream Dock</a>
                 </td>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.deep-blue-transparent.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.deep-blue-transparent.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.deep-blue-transparent.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.deep-blue-transparent.SDICON">Stream Dock</a>
                 </td>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.deep-blue.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.deep-blue.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.deep-blue.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.deep-blue.SDICON">Stream Dock</a>
                 </td>
@@ -86,22 +86,22 @@ jobs:
             
               <tr>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.emerald-green-transparent.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.emerald-green-transparent.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.emerald-green-transparent.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.emerald-green-transparent.SDICON">Stream Dock</a>
                 </td>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.emerald-green.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.emerald-green.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.emerald-green.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.emerald-green.SDICON">Stream Dock</a>
                 </td>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.warm-amber-transparent.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.warm-amber-transparent.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.warm-amber-transparent.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.warm-amber-transparent.SDICON">Stream Dock</a>
                 </td>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.warm-amber.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.warm-amber.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.warm-amber.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.warm-amber.SDICON">Stream Dock</a>
                 </td>
@@ -109,22 +109,22 @@ jobs:
             
               <tr>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.crimson-red-transparent.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.crimson-red-transparent.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.crimson-red-transparent.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.crimson-red-transparent.SDICON">Stream Dock</a>
                 </td>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.crimson-red.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.crimson-red.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.crimson-red.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.crimson-red.SDICON">Stream Dock</a>
                 </td>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.royal-purple-transparent.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.royal-purple-transparent.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.royal-purple-transparent.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.royal-purple-transparent.SDICON">Stream Dock</a>
                 </td>
                 <td>
-                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.royal-purple.thumb_16x9.png"><br/>
+                  <img src="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.royal-purple.thumb_16x9.jpg"><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.royal-purple.streamDeckIconPack">Stream Deck</a><br/>
                   <a href="${{ env.RELEASE_URL }}/${{ inputs.icon_pack_name }}.royal-purple.SDICON">Stream Dock</a>
                 </td>
@@ -133,4 +133,4 @@ jobs:
           files: |
             build/*.streamDeckIconPack
             build/*.SDICON
-            build/*.thumb_16x9.png
+            build/*.thumb_16x9.jpg

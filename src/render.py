@@ -148,8 +148,11 @@ def render_glyph(face, glyph_id: int, color: str, offset: tuple) -> Image.Image 
 
 
 def render_icon(
-    face, glyph_ids: tuple, primary_color: str, secondary_color: str | None, canvas_size: tuple[int, int],
-    canvas_color: str, canvas_radius: int,
+    face, glyph_ids: tuple,
+    primary_color: str,
+    secondary_color: str | None,
+    canvas_size: tuple[int, int],
+    canvas_color: str,
 ) -> Image.Image:
     primary_glyph_offset = get_glyph_offset(face, glyph_ids[0])
     secondary_glyph_offset = get_glyph_offset(face, glyph_ids[1])
@@ -169,12 +172,13 @@ def render_icon(
     if secondary_glyph:
         glyph.paste(secondary_glyph, (0, 0), secondary_glyph)
 
-    icon = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
-    mask = Image.new("L", canvas_size, 0)
-    draw = ImageDraw.Draw(mask)
-    draw.rounded_rectangle([(0, 0), (canvas_size[0] - 1, canvas_size[1] - 1)], radius=canvas_radius, fill=255)
-    background = Image.new("RGBA", canvas_size, canvas_color)
-    icon.paste(background, (0, 0), mask)
+    # icon = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
+    # mask = Image.new("L", canvas_size, 0)
+    # draw = ImageDraw.Draw(mask)
+    # draw.rounded_rectangle([(0, 0), (canvas_size[0] - 1, canvas_size[1] - 1)], radius=canvas_radius, fill=255)
+    # background = Image.new("RGBA", canvas_size, canvas_color)
+    # icon.paste(background, (0, 0), mask)
+    icon = Image.new("RGBA", canvas_size, canvas_color)
     icon.paste(glyph, ((canvas_size[0] - width) // 2, (canvas_size[1] - height) // 2), glyph)
 
     return icon
@@ -236,7 +240,6 @@ def render_icon_pack(font_id, font, variant_id, variant, config, glyphs, face, h
             variant["secondary_color"],
             (canvas_size * SCALE_FACTOR, canvas_size * SCALE_FACTOR),
             variant.get("canvas_color"),
-            config["canvas_radius"] * SCALE_FACTOR,
         )
         icon_path = OUTPUT_ICONS_FOLDER / f"{glyph_names[0]}.png"
         icon.resize((canvas_size, canvas_size)).save(icon_path)
@@ -250,7 +253,6 @@ def render_icon_pack(font_id, font, variant_id, variant, config, glyphs, face, h
                 variant["secondary_color"],
                 (category_icon_size, category_icon_size),
                 "#00000000",
-                0,
             )
             icon.resize((config["category_icon_size"], config["category_icon_size"])).save(OUTPUT_FOLDER / "icon.png")
 
@@ -280,22 +282,22 @@ def render_icon_pack(font_id, font, variant_id, variant, config, glyphs, face, h
         json.dump(manifest, f, indent=4)
 
     icons = [f for f in OUTPUT_ICONS_FOLDER.iterdir() if f.is_file()][:16 * 9]
-    image = Image.new("RGBA", ((canvas_size + 10) * 16, (canvas_size + 10) * 9), (0, 0, 0, 0))
+    image = Image.new("RGB", ((canvas_size + 10) * 16, (canvas_size + 10) * 9), (0, 0, 0, 0))
 
     for row in range(9):
         for column in range(16):
             icon = Image.open(icons[row * 16 + column])
             image.paste(icon, (column * (canvas_size + 10) + 5, row * (canvas_size + 10) + 5), icon)
 
-    image.save(BUILD_FOLDER / f"{font_id}.{variant_id}.thumb_16x9.png")
-    image = Image.new("RGBA", ((canvas_size + 10) * 10, (canvas_size + 10) * 10), (0, 0, 0, 0))
+    image.resize((1280, 720)).save(BUILD_FOLDER / f"{font_id}.{variant_id}.thumb_16x9.jpg")
+    image = Image.new("RGB", ((canvas_size + 10) * 10, (canvas_size + 10) * 10), (0, 0, 0, 0))
 
     for row in range(10):
         for column in range(10):
             icon = Image.open(icons[row * 10 + column])
             image.paste(icon, (column * (canvas_size + 10) + 5, row * (canvas_size + 10) + 5), icon)
 
-    image.save(BUILD_FOLDER / f"{font_id}.{variant_id}.thumb_10x10.png")
+    image.resize((1000, 1000)).save(BUILD_FOLDER / f"{font_id}.{variant_id}.thumb_10x10.jpg")
 
     output_folder = Path(f"com.github.lufton.{PROJECT_NAME}.{font_id}.{variant_id}.sdIconPack")
     OUTPUT_FOLDER.rename(output_folder)
