@@ -12,7 +12,7 @@ import requests
 import tinycss2
 import uharfbuzz as hb
 import unicodedata
-from PIL import Image, ImageDraw
+from PIL import Image
 from fontTools.ttLib import woff2
 from tqdm import tqdm
 
@@ -20,9 +20,9 @@ from src.consts import (
     ASSETS_FOLDER,
     BUILD_FOLDER,
     CONFIG_PATH,
-    OUTPUT_MANIFEST_PATH,
     OUTPUT_FOLDER,
     OUTPUT_ICONS_FOLDER,
+    OUTPUT_MANIFEST_PATH,
     PROJECT_NAME,
     PROJECT_VERSION,
     SCALE_FACTOR,
