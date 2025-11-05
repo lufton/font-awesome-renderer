@@ -11,219 +11,188 @@ permissions:
   id-token: write
 
 jobs:
-#  release-brands:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: brands
-#    secrets: inherit
-#
-#  release-chisel-regular:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: chisel-regular
-#    secrets: inherit
-#
-#  release-classic-solid:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: classic-solid
-#    secrets: inherit
-#
-#  release-classic-regular:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: classic-regular
-#    secrets: inherit
-#
-#  release-classic-light:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: classic-light
-#    secrets: inherit
-#
-#  release-classic-thin:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: classic-thin
-#    secrets: inherit
-#
-#  release-duotone-solid:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: duotone-solid
-#    secrets: inherit
-#
-#  release-duotone-regular:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: duotone-regular
-#    secrets: inherit
-#
-#  release-duotone-light:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: duotone-light
-#    secrets: inherit
-#
-#  release-duotone-thin:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: duotone-thin
-#    secrets: inherit
-#
-#  release-etch-solid:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: etch-solid
-#    secrets: inherit
-#
-#  release-jelly-regular:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: jelly-regular
-#    secrets: inherit
-#
-#  release-jelly-duo-regular:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: jelly-duo-regular
-#    secrets: inherit
-#
-#  release-jelly-fill-regular:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: jelly-fill-regular
-#    secrets: inherit
-#
-#  release-notdog-solid:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: notdog-solid
-#    secrets: inherit
-#
-#  release-notdog-duo-solid:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: notdog-duo-solid
-#    secrets: inherit
-#
-#  release-sharp-solid:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: sharp-solid
-#    secrets: inherit
-#
-#  release-sharp-regular:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: sharp-regular
-#    secrets: inherit
-#
-#  release-sharp-light:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: sharp-light
-#    secrets: inherit
-#
-#  release-sharp-thin:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: sharp-thin
-#    secrets: inherit
-#
-#  release-sharp-duotone-solid:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: sharp-duotone-solid
-#    secrets: inherit
-#
-#  release-sharp-duotone-regular:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: sharp-duotone-regular
-#    secrets: inherit
-#
-#  release-sharp-duotone-light:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: sharp-duotone-light
-#    secrets: inherit
-#
-#  release-sharp-duotone-thin:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: sharp-duotone-thin
-#    secrets: inherit
-#
-#  release-slab-regular:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: slab-regular
-#    secrets: inherit
-#
-#  release-slab-press-regular:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: slab-press-regular
-#    secrets: inherit
-#
-#  release-thumbprint-light:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: thumbprint-light
-#    secrets: inherit
-#
-#  release-utility-semibold:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: utility-semibold
-#    secrets: inherit
-#
-#  release-utility-duo-semibold:
-#    uses: ./.github/workflows/release-icon-pack.yml
-#    with:
-#      base_tag: ${{ github.ref_name }}
-#      icon_pack_name: utility-duo-semibold
-#    secrets: inherit
+  release-brands:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: brands
+
+  release-chisel-regular:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: chisel-regular
+
+  release-classic-solid:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: classic-solid
+
+  release-classic-regular:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: classic-regular
+
+  release-classic-light:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: classic-light
+
+  release-classic-thin:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: classic-thin
+
+  release-duotone-solid:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: duotone-solid
+
+  release-duotone-regular:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: duotone-regular
+
+  release-duotone-light:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: duotone-light
+
+  release-duotone-thin:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: duotone-thin
+
+  release-etch-solid:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: etch-solid
+
+  release-jelly-regular:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: jelly-regular
+
+  release-jelly-duo-regular:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: jelly-duo-regular
+
+  release-jelly-fill-regular:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: jelly-fill-regular
+
+  release-notdog-solid:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: notdog-solid
+
+  release-notdog-duo-solid:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: notdog-duo-solid
+
+  release-sharp-solid:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: sharp-solid
+
+  release-sharp-regular:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: sharp-regular
+
+  release-sharp-light:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: sharp-light
+
+  release-sharp-thin:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: sharp-thin
+
+  release-sharp-duotone-solid:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: sharp-duotone-solid
+
+  release-sharp-duotone-regular:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: sharp-duotone-regular
+
+  release-sharp-duotone-light:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: sharp-duotone-light
+
+  release-sharp-duotone-thin:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: sharp-duotone-thin
+
+  release-slab-regular:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: slab-regular
+
+  release-slab-press-regular:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: slab-press-regular
+
+  release-thumbprint-light:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: thumbprint-light
+
+  release-utility-semibold:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: utility-semibold
+
+  release-utility-duo-semibold:
+    uses: ./.github/workflows/release-icon-pack.yml
+    with:
+      base_tag: ${{ github.ref_name }}
+      icon_pack_name: utility-duo-semibold
 
   release-utility-fill-semibold:
     uses: ./.github/workflows/release-icon-pack.yml
     with:
       base_tag: ${{ github.ref_name }}
       icon_pack_name: utility-fill-semibold
-    secrets: inherit
 
   release-whiteboard-semibold:
     uses: ./.github/workflows/release-icon-pack.yml
     with:
       base_tag: ${{ github.ref_name }}
       icon_pack_name: whiteboard-semibold
-    secrets: inherit
