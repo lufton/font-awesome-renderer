@@ -190,7 +190,7 @@ def zip_folder(input_folder: Path, output_path: Path):
             for file in files:
                 full_path = os.path.join(root, file)
                 relative_path = os.path.relpath(full_path, input_folder)
-                zipf.write(full_path, f"{input_folder.name}\\{relative_path}")
+                zipf.write(full_path, f"{input_folder.name}/{relative_path}")
 
 
 def slugify(value: str) -> str:
