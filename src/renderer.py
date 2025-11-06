@@ -114,12 +114,6 @@ def get_glyph_id(font, char: str, primary: bool = True) -> int:
     return buf.glyph_infos[0].codepoint
 
 
-def get_glyph_offset(face: freetype.Face, glyph_id: int):
-    face.load_glyph(glyph_id)
-
-    return face.glyph.bitmap_left, face.glyph.bitmap_top
-
-
 def get_glyph_image(face, glyph_id: int) -> Image.Image | None:
     if glyph_id is None:
         return None
@@ -137,7 +131,7 @@ def get_glyph_image(face, glyph_id: int) -> Image.Image | None:
     return image
 
 
-def get_glyph_images(font, config, glyphs, face, hb_font):
+def get_glyph_images(font, config, glyphs, face, hb_font) -> dict:
     face.set_char_size(config["icon_size"] * SCALE_FACTOR * 64)
     glyph_images = {}
 
@@ -184,10 +178,10 @@ def render_icon(
     canvas_size: tuple[int, int],
     canvas_color: str,
 ) -> Image.Image:
-    primary_glyph_offset = get_glyph_offset(face, glyph_ids[0])
-    secondary_glyph_offset = get_glyph_offset(face, glyph_ids[1])
-    left_offset = min(primary_glyph_offset[0], secondary_glyph_offset[0])
-    top_offset = max(primary_glyph_offset[1], secondary_glyph_offset[1])
+    primary_image = glyph_images.get(glyph_ids[0])
+    secondary_image = glyph_images.get(glyph_ids[0])
+    left_offset = min(primary_image.left if primary_image else 100500, secondary_image.left if secondary_image else 100500)
+    top_offset = max(primary_image.top if primary_image else -100500, secondary_image.top if secondary_image else -100500)
     primary_glyph = render_glyph(glyph_images.get(glyph_ids[0]), primary_color, (left_offset, top_offset))
     secondary_glyph = render_glyph(glyph_images.get(glyph_ids[1]), secondary_color, (left_offset, top_offset))
 
