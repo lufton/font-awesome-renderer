@@ -198,43 +198,47 @@ jobs:
       icon_pack_name: whiteboard-semibold
 
   release-all:
-    uses: softprops/action-gh-release@v2
-    with:
-      name: "Icon Packs ${{ github.ref_name }}"
-      body: |
-        ### 🎨 Icon Packs
-
-        <ul>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-brands">Brands ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-chisel-regular">Chisel Regular ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-classic-solid">Classic Solid ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-classic-regular">Classic Regular ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-classic-light">Classic Light ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-classic-thin">Classic Thin ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-duotone-solid">Duotone Solid ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-duotone-regular">Duotone Regular ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-duotone-light">Duotone Light ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-duotone-thin">Duotone Thin ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-etch-solid">Etch Solid ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-jelly-regular">Jelly Regular ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-jelly-duo-regular">Jelly Duo Regular ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-jelly-fill-regular">Jelly Fill Regular ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-notdog-solid">Notdog Solid ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-notdog-duo-solid">Notdog Duo Solid ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-solid">Sharp Solid ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-regular">Sharp Regular ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-light">Sharp Light ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-thin">Sharp Thin ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-duotone-solid">Sharp Duotone Solid ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-duotone-regular">Sharp Duotone Regular ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-duotone-light">Sharp Duotone Light ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-duotone-thin">Sharp Duotone Thin ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-slab-regular">Slab Regular ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-slab-press-regular">Slab Press Regular ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-thumbprint-light">Thumbprint Light ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-utility-semibold">Utility Semibold ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-utility-duo-semibold">Utility Duo Semibold ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-utility-fill-semibold">Utility Fill Semibold ${{ github.ref_name }}</a></li>
-          <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-whiteboard-semibold">Whiteboard Semibold ${{ github.ref_name }}</a></li>
-        </ul>
-      make_latest: true
+    runs-on: self-hosted
+    steps:
+      - uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: "Icon Packs ${{ github.ref_name }}"
+          body: |
+            ### 🎨 Icon Packs
+    
+            <ul>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-brands">Brands ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-chisel-regular">Chisel Regular ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-classic-solid">Classic Solid ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-classic-regular">Classic Regular ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-classic-light">Classic Light ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-classic-thin">Classic Thin ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-duotone-solid">Duotone Solid ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-duotone-regular">Duotone Regular ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-duotone-light">Duotone Light ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-duotone-thin">Duotone Thin ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-etch-solid">Etch Solid ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-jelly-regular">Jelly Regular ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-jelly-duo-regular">Jelly Duo Regular ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-jelly-fill-regular">Jelly Fill Regular ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-notdog-solid">Notdog Solid ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-notdog-duo-solid">Notdog Duo Solid ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-solid">Sharp Solid ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-regular">Sharp Regular ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-light">Sharp Light ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-thin">Sharp Thin ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-duotone-solid">Sharp Duotone Solid ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-duotone-regular">Sharp Duotone Regular ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-duotone-light">Sharp Duotone Light ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-sharp-duotone-thin">Sharp Duotone Thin ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-slab-regular">Slab Regular ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-slab-press-regular">Slab Press Regular ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-thumbprint-light">Thumbprint Light ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-utility-semibold">Utility Semibold ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-utility-duo-semibold">Utility Duo Semibold ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-utility-fill-semibold">Utility Fill Semibold ${{ github.ref_name }}</a></li>
+              <li><a href="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}-whiteboard-semibold">Whiteboard Semibold ${{ github.ref_name }}</a></li>
+            </ul>
+          make_latest: true
