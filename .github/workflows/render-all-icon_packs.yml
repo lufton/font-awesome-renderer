@@ -199,6 +199,38 @@ jobs:
 
   release-all:
     runs-on: self-hosted
+    needs:
+      - release-brands
+      - release-chisel-regular
+      - release-classic-solid
+      - release-classic-regular
+      - release-classic-light
+      - release-classic-thin
+      - release-duotone-solid
+      - release-duotone-regular
+      - release-duotone-light
+      - release-duotone-thin
+      - release-etch-solid
+      - release-jelly-regular
+      - release-jelly-duo-regular
+      - release-jelly-fill-regular
+      - release-notdog-solid
+      - release-notdog-duo-solid
+      - release-sharp-solid
+      - release-sharp-regular
+      - release-sharp-light
+      - release-sharp-thin
+      - release-sharp-duotone-solid
+      - release-sharp-duotone-regular
+      - release-sharp-duotone-light
+      - release-sharp-duotone-thin
+      - release-slab-regular
+      - release-slab-press-regular
+      - release-thumbprint-light
+      - release-utility-semibold
+      - release-utility-duo-semibold
+      - release-utility-fill-semibold
+      - release-whiteboard-semibold
     steps:
       - uses: softprops/action-gh-release@v2
         env:

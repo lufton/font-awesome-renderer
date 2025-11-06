@@ -132,53 +132,7 @@ jobs:
               </tr>
             </table>
           files: |
-            build/${{ inputs.icon_pack_name }}.white-transparent.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.white-transparent.SDICON
-            build/${{ inputs.icon_pack_name }}.white.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.white.SDICON
-            
-            build/${{ inputs.icon_pack_name }}.deep-blue-transparent.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.deep-blue-transparent.SDICON
-            build/${{ inputs.icon_pack_name }}.deep-blue.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.deep-blue.SDICON
-            
-            build/${{ inputs.icon_pack_name }}.emerald-green-transparent.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.emerald-green-transparent.SDICON
-            build/${{ inputs.icon_pack_name }}.emerald-green.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.emerald-green.SDICON
-            
-            build/${{ inputs.icon_pack_name }}.warm-amber-transparent.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.warm-amber-transparent.SDICON
-            build/${{ inputs.icon_pack_name }}.warm-amber.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.warm-amber.SDICON
-            
-            build/${{ inputs.icon_pack_name }}.crimson-red-transparent.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.crimson-red-transparent.SDICON
-            build/${{ inputs.icon_pack_name }}.crimson-red.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.crimson-red.SDICON
-            
-            build/${{ inputs.icon_pack_name }}.royal-purple-transparent.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.royal-purple-transparent.SDICON
-            build/${{ inputs.icon_pack_name }}.royal-purple.streamDeckIconPack
-            build/${{ inputs.icon_pack_name }}.royal-purple.SDICON
-            
-            build/${{ inputs.icon_pack_name }}.white-transparent.thumb_16x9.jpg
-            build/${{ inputs.icon_pack_name }}.white.thumb_16x9.jpg
-
-            build/${{ inputs.icon_pack_name }}.deep-blue-transparent.thumb_16x9.jpg
-            build/${{ inputs.icon_pack_name }}.deep-blue.thumb_16x9.jpg
-
-            build/${{ inputs.icon_pack_name }}.emerald-green-transparent.thumb_16x9.jpg
-            build/${{ inputs.icon_pack_name }}.emerald-green.thumb_16x9.jpg
-
-            build/${{ inputs.icon_pack_name }}.warm-amber-transparent.thumb_16x9.jpg
-            build/${{ inputs.icon_pack_name }}.warm-amber.thumb_16x9.jpg
-
-            build/${{ inputs.icon_pack_name }}.crimson-red-transparent.thumb_16x9.jpg
-            build/${{ inputs.icon_pack_name }}.crimson-red.thumb_16x9.jpg
-
-            build/${{ inputs.icon_pack_name }}.royal-purple-transparent.thumb_16x9.jpg
-            build/${{ inputs.icon_pack_name }}.royal-purple.thumb_16x9.jpg
-
+            build/*.streamDeckIconPack
+            build/*.SDICON
+            build/*.thumb_16x9.jpg
           make_latest: false
-          preserve_order: true
