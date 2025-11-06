@@ -1,6 +1,5 @@
 import json
 import os
-import re
 import shutil
 import sys
 import zipfile
@@ -11,7 +10,6 @@ import freetype
 import requests
 import tinycss2
 import uharfbuzz as hb
-import unicodedata
 from PIL import Image
 from fontTools.ttLib import woff2
 from tqdm import tqdm
@@ -122,7 +120,7 @@ def get_glyph_offset(face: freetype.Face, glyph_id: int):
     return face.glyph.bitmap_left, face.glyph.bitmap_top
 
 
-def render_glyph(face, glyph_id: int, color: str, offset: tuple) -> Image.Image | None:
+def get_glyph_image(face, glyph_id: int) -> Image.Image | None:
     if glyph_id is None:
         return None
 
@@ -132,23 +130,55 @@ def render_glyph(face, glyph_id: int, color: str, offset: tuple) -> Image.Image 
         return None
 
     size = (face.glyph.bitmap.width, face.glyph.bitmap.rows)
-    img = Image.frombytes("L", size, bytes(face.glyph.bitmap.buffer))
+    image = Image.frombytes("L", size, bytes(face.glyph.bitmap.buffer))
+    image.top = face.glyph.bitmap_top
+    image.left = face.glyph.bitmap_left
+
+    return image
+
+
+def get_glyph_images(font, config, glyphs, face, hb_font):
+    face.set_char_size(config["icon_size"] * SCALE_FACTOR * 64)
+    glyph_images = {}
+
+    for glyph, glyph_names in tqdm(
+        glyphs.items(),
+        desc=f"Rastering {font['name']} for {config['device']}",
+        mininterval=1,
+        unit="icons",
+        dynamic_ncols=True,
+    ):
+        if primary_glyph_id := get_glyph_id(hb_font, glyph):
+            glyph_images[primary_glyph_id] = get_glyph_image(face, primary_glyph_id)
+
+        if secondary_glyph_id := get_glyph_id(hb_font, glyph, False):
+            glyph_images[secondary_glyph_id] = get_glyph_image(face, secondary_glyph_id)
+
+    return glyph_images
+
+
+def render_glyph(img: Image.Image, color: str, offset: tuple) -> Image.Image | None:
+    if not img:
+        return None
+
     glyph = Image.new("RGBA", img.size, color)
     glyph.putalpha(img)
 
     canvas = Image.new(
         "RGBA", (
-            face.glyph.bitmap.width + face.glyph.bitmap_left - offset[0],
-            face.glyph.bitmap.rows + offset[1] - face.glyph.bitmap_top
+            img.width + img.left - offset[0],
+            img.height + offset[1] - img.top
         ), (0, 0, 0, 0),
     )
-    canvas.paste(glyph, (face.glyph.bitmap_left - offset[0], offset[1] - face.glyph.bitmap_top), glyph)
+    canvas.paste(glyph, (img.left - offset[0], offset[1] - img.top), glyph)
 
     return canvas
 
 
 def render_icon(
-    face, glyph_ids: tuple,
+    face,
+    glyph_ids: tuple,
+    glyph_images: dict,
     primary_color: str,
     secondary_color: str | None,
     canvas_size: tuple[int, int],
@@ -158,8 +188,8 @@ def render_icon(
     secondary_glyph_offset = get_glyph_offset(face, glyph_ids[1])
     left_offset = min(primary_glyph_offset[0], secondary_glyph_offset[0])
     top_offset = max(primary_glyph_offset[1], secondary_glyph_offset[1])
-    primary_glyph = render_glyph(face, glyph_ids[0], primary_color, (left_offset, top_offset))
-    secondary_glyph = render_glyph(face, glyph_ids[1], secondary_color, (left_offset, top_offset))
+    primary_glyph = render_glyph(glyph_images.get(glyph_ids[0]), primary_color, (left_offset, top_offset))
+    secondary_glyph = render_glyph(glyph_images.get(glyph_ids[1]), secondary_color, (left_offset, top_offset))
 
     width = max(primary_glyph.size[0] if primary_glyph else 0, secondary_glyph.size[0] if secondary_glyph else 0)
     height = max(primary_glyph.size[1] if primary_glyph else 0, secondary_glyph.size[1] if secondary_glyph else 0)
@@ -187,33 +217,18 @@ def zip_folder(input_folder: Path, output_path: Path):
                 zipf.write(full_path, f"{input_folder.name}/{relative_path}")
 
 
-def slugify(value: str) -> str:
-    value = unicodedata.normalize('NFKD', value)
-    value = value.encode('ascii', 'ignore').decode('ascii')
-    value = re.sub(r'[^a-zA-Z0-9]+', '-', value)
-
-    return value.strip('-').lower()
-
-
-def render_icon_pack(font_id, font, variant_id, variant, config, glyphs, face, hb_font):
-    face.set_char_size(config["icon_size"] * SCALE_FACTOR * 64)
+def render_icon_pack(font_id, font, variant_id, variant, config, glyphs, glyph_images, face, hb_font):
     canvas_size = config["canvas_size"]
 
     shutil.rmtree(OUTPUT_FOLDER, True)
     OUTPUT_ICONS_FOLDER.mkdir(parents=True)
     icons = []
 
-    glyphs = {
-        glyph: glyph_names
-        for glyph, glyph_names in glyphs.items()
-        if get_glyph_id(hb_font, glyph) or get_glyph_id(hb_font, glyph, False)
-    }
-
     for glyph, glyph_names in tqdm(
         glyphs.items(),
         desc=f"Rendering {font['name']} – {variant['name']} for {config['device']}",
         mininterval=1,
-        unit="glyph",
+        unit="icons",
         dynamic_ncols=True,
         colour=variant["primary_color"][:7],
     ):
@@ -230,6 +245,7 @@ def render_icon_pack(font_id, font, variant_id, variant, config, glyphs, face, h
         icon = render_icon(
             face,
             (primary_glyph_id, secondary_glyph_id),
+            glyph_images,
             variant["primary_color"],
             variant["secondary_color"],
             (canvas_size * SCALE_FACTOR, canvas_size * SCALE_FACTOR),
@@ -243,6 +259,7 @@ def render_icon_pack(font_id, font, variant_id, variant, config, glyphs, face, h
             icon = render_icon(
                 face,
                 (primary_glyph_id, secondary_glyph_id),
+                glyph_images,
                 variant["primary_color"],
                 variant["secondary_color"],
                 (category_icon_size, category_icon_size),
@@ -294,6 +311,7 @@ def render_icon_pack(font_id, font, variant_id, variant, config, glyphs, face, h
     image.resize((1000, 1000)).save(BUILD_FOLDER / f"{font_id}.{variant_id}.thumb_10x10.jpg")
 
     output_folder = Path(f"com.github.lufton.{PROJECT_NAME}.{font_id}.{variant_id}.sdIconPack")
+    shutil.rmtree(output_folder, True)
     OUTPUT_FOLDER.rename(output_folder)
     zip_folder(output_folder, BUILD_FOLDER / f"{font_id}.{variant_id}.{config['extension']}")
     shutil.rmtree(output_folder, True)
@@ -333,9 +351,12 @@ def main():
                 if get_glyph_id(hb_font, glyph) or get_glyph_id(hb_font, glyph, False)
             }
 
+            stream_deck_glyph_images = get_glyph_images(font, stream_deck_config, glyphs, face, hb_font)
+            stream_dock_glyph_images = get_glyph_images(font, stream_dock_config, glyphs, face, hb_font)
+
             for variant_id, variant in variants.items():
-                render_icon_pack(sys.argv[1], font, variant_id, variant, stream_deck_config, glyphs, face, hb_font)
-                render_icon_pack(sys.argv[1], font, variant_id, variant, stream_dock_config, glyphs, face, hb_font)
+                render_icon_pack(sys.argv[1], font, variant_id, variant, stream_deck_config, glyphs, stream_deck_glyph_images, face, hb_font)
+                render_icon_pack(sys.argv[1], font, variant_id, variant, stream_dock_config, glyphs, stream_dock_glyph_images, face, hb_font)
             else:
                 print(
                     "This doesn't look like a valid font style. CSS should contain @font-family rule with src property pointing to woff2 font file.",

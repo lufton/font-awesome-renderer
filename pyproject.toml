@@ -14,4 +14,4 @@ dependencies = [
 ]
 
 [project.scripts]
-render = "src.render:cli"
+render = "src.renderer:cli"
