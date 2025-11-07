@@ -179,7 +179,7 @@ def render_icon(
     canvas_color: str,
 ) -> Image.Image:
     primary_image = glyph_images.get(glyph_ids[0])
-    secondary_image = glyph_images.get(glyph_ids[0])
+    secondary_image = glyph_images.get(glyph_ids[1])
     left_offset = min(primary_image.left if primary_image else 100500, secondary_image.left if secondary_image else 100500)
     top_offset = max(primary_image.top if primary_image else -100500, secondary_image.top if secondary_image else -100500)
     primary_glyph = render_glyph(glyph_images.get(glyph_ids[0]), primary_color, (left_offset, top_offset))
