@@ -351,10 +351,10 @@ def main():
             for variant_id, variant in variants.items():
                 render_icon_pack(sys.argv[1], font, variant_id, variant, stream_deck_config, glyphs, stream_deck_glyph_images, face, hb_font)
                 render_icon_pack(sys.argv[1], font, variant_id, variant, stream_dock_config, glyphs, stream_dock_glyph_images, face, hb_font)
-            else:
-                print(
-                    "This doesn't look like a valid font style. CSS should contain @font-family rule with src property pointing to woff2 font file.",
-                )
+        else:
+            print(
+                "This doesn't look like a valid font style. CSS should contain @font-family rule with src property pointing to woff2 font file.",
+            )
     else:
         print(
             f"{sys.argv[1]} doesn't look like a valid font name, possible values:\n{'\n'.join(font_id for font_id in fonts.keys())}",
